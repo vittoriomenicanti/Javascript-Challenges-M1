@@ -14,40 +14,36 @@
 // 2 = is an even number(white square) = 2B
 // use % modular operator to determine if a number (row) is even or odds with an if statemnets if so alert() if it's a black square or white square
 
-let squareColor = prompt('please enter a number and a row e.g(1A): ').toLowerCase();
+let squareColor = prompt('please enter a number and a row e.g(1A): ').toUpperCase();
  
 
-let number = squareColor.slice(0,1);//separating the number from the string
 
-let letter = squareColor.slice(1,2);//separating the letter from the string
+let letter = squareColor.slice(0,1); //separating the letter from input
+let number = squareColor.slice(1,2);//separating the number from the input
 
- 
-    
-let WhiteColum;
+//note: slice() method creates/converts strings  number into a real number 
 
-let BlackColum;
+switch (letter) {
+case "A":
+case "C":
+case "E":
+case "G":
+    if (number % 2 == 0) {
+    alert("The square is White!");
+    } else {
+    alert("The square is Black!");
+    }
+break;
 
-if (letter == "a" || letter == "c" || letter == "e" || letter == "g" ) {
-
-    WhiteColum = true;
-
-} else {
-
-    BlackColum = true;
-}
-    
-if (WhiteColum && (number % 2 == 0)) {
-
-alert("The square is White");
-
-} else if (BlackColum && (number % 2 > 0)) {
-
-alert("The square is White");
-
-} else {
-
-alert("The square is Black");
-
+case "B":
+case "D":
+case "F":
+case "H":
+    if (number % 2 == 0) {
+    alert("The square is Black!");
+    } else {
+    alert("The square is White!");
+    }
 }
 
 
